@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-outline {
+    border: 1px solid #6ef4ac;
+    background-color: #001528;
+    color: #6ef4ac;
+    padding: 0.625rem 0.7rem;
+  }
+  .btn-solid {
+    border: 1px solid #6ef4ac;
+    background-color: #6ef4ac;
+    color: #0f1e2c;
+    padding: 0.625rem 0.7rem;
+  }
+}
+textarea {
+  background: #1c2833;
+  @apply p-3 w-full text-gray-400 focus:outline-none;
+}
+textarea::placeholder {
+  color: #4a5865;
+}
+input {
+  background: #1c2833;
+  @apply text-gray-400 focus:outline-none focus:border-gray-500 focus:shadow-sm w-full p-3 h-12;
+}
+label {
+  color: #4a5865;
+  @apply absolute top-0 left-0 px-3 py-3 pb-5 h-full pointer-events-none transform origin-left transition-all duration-100 ease-in-out;
+}
+.input-div {
+  background: #1c2833;
+  @apply relative mb-5;
+}
+.input-div > input::placeholder {
+  color: transparent;
+}
+.input-div > input:focus,
+.input-div > input:not(:placeholder-shown) {
+  @apply pt-8;
+}
+.input-div > input:focus ~ label,
+.input-div > input:not(:placeholder-shown) ~ label {
+  @apply opacity-75 scale-75 -translate-y-3 translate-x-1;
+}
+
+/* ELEMENT DECORATION */
+h1::before {
+  content: "<h1> \a";
+  white-space: pre;
+  display: block;
+  height: auto;
+  font-size: 0.75rem;
+  @apply text-gray-700 italic;
+}
+h1::after {
+  content: "\a </h1>";
+  white-space: pre;
+  display: block;
+  height: auto;
+  font-size: 0.75rem;
+  @apply text-gray-700 italic;
+}
