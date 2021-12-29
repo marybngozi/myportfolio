@@ -76,11 +76,17 @@ h6 {
   h1 {
     font-size: 1.91rem;
   }
+  section {
+    height: 84vh;
+  }
 }
 /* No less than 322px, no greater than 360px */
 @media (min-width: 322px) and (max-width: 360px) {
   h1 {
     font-size: 2rem;
+  }
+  section {
+    height: 85vh;
   }
 }
 @media (min-width: 361px) and (max-width: 424px) {
