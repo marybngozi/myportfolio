@@ -3,13 +3,13 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "MB || Software Engineer",
+    title: "MaryBlessing || Software Engineer",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
-        name: "MaryBlessing Portfolio",
+        name: "MaryBlessing Umeh",
         content:
           "MaryBlessing Ngozichukwu Chimagbanwe Umeh, Software Engineer, Full-Stack Developer",
       },

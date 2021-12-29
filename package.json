@@ -1,6 +1,7 @@
 {
   "name": "marybngozi",
   "version": "1.0.0",
+  "description": "MaryBlessing Umeh Portfolio",
   "private": true,
   "scripts": {
     "dev": "nuxt",
