@@ -20,7 +20,15 @@
     "vue": "^2.6.14",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
-    "webpack": "^4.46.0"
+    "webpack": "^4.46.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "joi": "^17.3.0",
+    "moment": "^2.24.0",
+    "mongoose": "^5.2.4",
+    "mustache": "^4.1.0",
+    "randomstring": "^1.2.1"
   },
   "devDependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.15.4",

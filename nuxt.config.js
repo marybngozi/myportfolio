@@ -1,4 +1,8 @@
 export default {
+  target: "server",
+
+  mode: "universal",
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "MB || Software Engineer",
@@ -48,6 +52,10 @@ export default {
     // https://go.nuxtjs.dev/pwa
     "@nuxtjs/pwa",
   ],
+
+  serverMiddleware: {
+    "/api": "~/api",
+  },
 
   fontawesome: {
     icons: {
