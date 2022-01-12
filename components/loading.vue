@@ -26,26 +26,29 @@ export default {
   name: "loading",
 
   data() {
-    return { loading: false, menuClicked: false }
+    return { loading: false, menuClicked: false };
   },
 
   watch: {
     menuClicked() {
-      document.querySelector(".sidenav").classList.toggle("show")
+      document.querySelector(".sidenav").classList.toggle("show");
     },
   },
 
   methods: {
     start() {
-      this.loading = true
+      this.loading = true;
     },
     finish() {
       setTimeout(() => {
-        this.loading = false
-      }, 500)
+        this.loading = false;
+      }, 500);
+
+      try {
+      } catch (error) {}
     },
   },
-}
+};
 </script>
 <style scoped>
 .load {

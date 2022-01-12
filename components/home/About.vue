@@ -24,7 +24,7 @@
         <img
           src="/marybngozi.png"
           alt="MaryBlessing Umeh picture"
-          class="w-10/12 mx-auto sm:w-7/12 md:w-full xl:w-9/12 xl:mx-auto h-auto border-double border-lemon rounded-full"
+          class="w-10/12 mx-auto sm:w-7/12 md:w-full xl:w-9/12 xl:mx-auto h-auto border-double border-lemon rounded-full my_image"
         />
       </div>
     </div>
@@ -46,5 +46,13 @@ h1 {
 }
 p {
   @apply text-white text-sm md:text-base mt-3 tracking-wide;
+}
+.my_image {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+.my_image:hover {
+  filter: none;
+  -webkit-filter: grayscale(0);
 }
 </style>
