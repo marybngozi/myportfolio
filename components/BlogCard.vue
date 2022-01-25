@@ -42,7 +42,7 @@ export default {
   @apply px-7 py-5 mx-auto;
 }
 h4 {
-  @apply text-lemon font-black text-3xl mb-3;
+  @apply text-lemon font-black text-2xl mb-3;
 }
 small {
   @apply uppercase text-xs;

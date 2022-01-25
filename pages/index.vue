@@ -47,6 +47,23 @@ export default {
   overflow-y: clip;
   @apply font-lato block lg:flex lg:justify-between pb-6;
 }
+.home::before {
+  content: "";
+  background-image: url("/bg.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right top;
+  width: 100%;
+  height: 90%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  /* z-index: -1; */
+  pointer-events: none;
+  opacity: 0.5;
+}
 .sidenav {
   @apply hidden lg:block fixed top-0 bottom-0 left-0 lg:static;
   height: 100vh;

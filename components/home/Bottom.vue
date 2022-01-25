@@ -35,7 +35,7 @@
       </p>
 
       <form
-        class="mt-12 w-11/12 sm:w-9/12 mx-auto md:w-full lg:w-9/12"
+        class="mt-12 w-11/12 sm:w-9/12 mx-auto md:w-full lg:w-9/12 lg:mx-0"
         action=""
       >
         <div class="flex flex-col md:flex-row">
@@ -109,8 +109,12 @@
           </li>
 
           <li>
-            <h6>Awesome Icons</h6>
-            <a href="https://fontawesome.com/" target="_blank">Font Awesome</a>
+            <h6>Amazing Front-end Development</h6>
+            <a
+              href="https://wa.me/2348136587946?text=Hello%20MaryB%2C%20I%20am%20in%20need%20of%20your%20tech%20skills."
+              target="_blank"
+              >MaryBlessing Umeh (Me)</a
+            >
           </li>
         </ol>
 
@@ -148,7 +152,7 @@ h4 {
   @apply text-2xl font-bold text-lemon;
 }
 ul li {
-  @apply inline-block mr-3 text-xs;
+  @apply inline-block mr-3 text-sm;
 }
 ol li {
   @apply mb-5;

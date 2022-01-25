@@ -12,7 +12,6 @@
 
     <div class="flex justify-end">
       <nuxt-link to="/blog" class="button"> Read more articles... </nuxt-link>
-      <!-- <button class="button"></button>/ -->
     </div>
 
     <div class="fake-big">Blog</div>

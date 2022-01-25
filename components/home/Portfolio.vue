@@ -23,12 +23,13 @@
     </div>
 
     <div id="projects" class="flex flex-wrap">
-      <div v-for="(p, i) in topProjects" :key="i" class="project">
+      <div v-for="(p, i) in topProjects" :key="i" class="project relative">
         <img
           :src="require(`@/assets/images/${p.image}.png`)"
           :alt="p.name"
-          class="w-full h-full"
+          class="w-full h-full port-works"
         />
+        <button class="img-btn">View Project</button>
       </div>
     </div>
   </section>
@@ -76,6 +77,18 @@ export default {
       ],
     };
   },
+
+  mounted() {
+    document.querySelectorAll(".project").forEach((el) => {
+      el.addEventListener("mouseover", () => {
+        el.children[1].style.display = "block";
+      });
+
+      el.addEventListener("mouseleave", () => {
+        el.children[1].style.display = "none";
+      });
+    });
+  },
 };
 </script>
 <style scoped>
@@ -90,6 +103,17 @@ p {
 }
 .div-btn {
   @apply block md:flex flex-col justify-center;
+}
+.img-btn {
+  @apply absolute top-1/3 left-1/4 rounded-full bg-lemon text-navyBlue px-12 py-7 hidden;
+}
+.port-works {
+  filter: grayscale(70%);
+  -webkit-filter: grayscale(70%);
+}
+.port-works:hover {
+  filter: none;
+  -webkit-filter: grayscale(0);
 }
 .project {
   @apply w-1/2 h-auto;
