@@ -11,7 +11,7 @@
 
     <main class="text-white flex justify-center items-center">
       <div class="w-4/5 md:w-2/5 flex flex-col items-center">
-        <img src="/icon.png" alt="logo" class="logo" />
+        <Logo lclass="w-20 h-20" />
         <p class="my-3">MaryB is thinking...</p>
         <div class="w-full bg-dark h-1">
           <div class="bg-lemon h-1" style="width: 45%"></div>

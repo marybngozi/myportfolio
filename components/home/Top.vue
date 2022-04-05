@@ -17,7 +17,7 @@
       ><span>e</span><span>e</span><span>r</span>
     </h1>
 
-    <h6>Actually a Full-stack Developer</h6>
+    <h6>Actually a Full-stack Developer / Part-time Mentor</h6>
 
     <nuxt-link to="/contact" class="btn-outline w-60">
       <span>Wanna talk?</span>

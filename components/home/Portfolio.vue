@@ -5,10 +5,10 @@
 
       <div class="flex flex-col lg:flex-row justify-between">
         <p class="w-12/12 lg:w-8/12 text-justify mb-7 lg:mb-0">
-          But I must explain to you how all this mistaken idea of denouncing
-          pleasure and praising pain was born and I will give you a complete
-          account of the system, and expound the actual teachings of the great
-          explorer of the truth, the master-builder of human happiness.
+          Having collaborated in building some amazing projects and personal
+          projects too. Also here are is added some of the Mentorship projects I
+          took part in. I have some of them shown here, and these are the ones I
+          could share with you. Hope you find them amazing.👩🏽‍💻
         </p>
 
         <div class="w-12/12 lg:w-3/12 div-btn">

@@ -29,9 +29,9 @@
       </ul>
 
       <p class="text-justify mt-4 mb-7">
-        I'm interested n freelance opportunities, especially amobitious and
-        large projects. If you have any foreign job biko do not hesistate to
-        link me up, Chineke gozie gi!
+        I'm interested in remote work, office (a cool place) work, freelance
+        opportunities, especially amobitious and large projects. I am currently
+        at GMT+1 and work remotely effortlessly. I also take mentorship roles.
       </p>
 
       <form
