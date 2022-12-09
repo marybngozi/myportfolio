@@ -10,6 +10,7 @@ module.exports = {
         navyBlue: "#001528",
         lemon: "#6EF4AC",
         lightLemon: "#6C8879",
+        darkNavy: "#0F1E2C",
       },
     },
     fontFamily: {
