@@ -26,7 +26,7 @@ export default {
     ],
   },
 
-  loading: "~/components/loading.vue",
+  // loading: "~/components/loading.vue",
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
@@ -45,12 +45,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    // https://go.nuxtjs.dev/axios
-    "@nuxtjs/axios",
-    // https://go.nuxtjs.dev/pwa
-    "@nuxtjs/pwa",
-  ],
+  modules: ["@nuxtjs/auth", "@nuxtjs/axios", "@nuxtjs/pwa"],
 
   serverMiddleware: {
     "/api": "~/api",
@@ -66,13 +61,39 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: "/",
+    baseURL: "/api",
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
       lang: "en",
+    },
+  },
+
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: "/auth/login",
+            method: "POST",
+            propertyName: "token",
+          },
+          user: {
+            url: "/user/me",
+            method: "GET",
+            propertyName: "user",
+          },
+          logout: false,
+        },
+      },
+    },
+    redirect: {
+      login: "/admin/login",
+      logout: "/admin/login",
+      callback: false,
+      home: "/admin/app",
     },
   },
 

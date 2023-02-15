@@ -1,10 +1,11 @@
 const express = require("express");
-const { ErrorHandler } = require("../errors");
+const { ErrorHandler } = require("../utils/errors");
 
 const indexController = require("../controllers/index");
 
 // import all routes
-// const authRoutes = require('./auth')
+const authRoutes = require("./auth");
+const userRoutes = require("./user");
 
 const router = express();
 
@@ -12,7 +13,10 @@ const router = express();
 router.use("", indexController());
 
 // Routes for auth views
-// router.use('/auth', authRoutes());
+router.use("/auth", authRoutes());
+
+// Routes for user views
+router.use("/user", userRoutes());
 
 // When route is not found, returns a json
 router.use((req, res, next) => {
