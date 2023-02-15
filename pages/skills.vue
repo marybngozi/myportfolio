@@ -9,7 +9,7 @@
     </transition>
 
     <main class="text-white flex justify-center items-center">
-      <h1 class="text-lemon">My Skills</h1>
+      <h1 class="text-lemon">My Skills set</h1>
     </main>
   </div>
 </template>
