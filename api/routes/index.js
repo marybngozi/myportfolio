@@ -33,9 +33,7 @@ router.use((error, req, res, next) => {
   const { errorCode, message } = ErrorHandler(error);
 
   return res.status(errorCode).json({
-    error: {
-      message,
-    },
+    message,
   });
 });
 

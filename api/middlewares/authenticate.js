@@ -4,11 +4,7 @@ const { User } = require("../models/index.js");
 
 const authenticate = async (req, res, next) => {
   try {
-    let token =
-      req.headers["x-access-token"] ||
-      req.headers.authorization ||
-      req.body.token ||
-      req.query.token; // Express headers are auto converted to lowercase
+    let token = req.headers["x-access-token"] || req.headers.authorization; // Express headers are auto converted to lowercase
 
     if (!token)
       throw new UnAuthorizedAccess("Auth token is not supplied", "N403");

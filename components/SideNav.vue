@@ -115,6 +115,15 @@
             </li>
           </ul>
         </li>
+
+        <li class="mt-5 border-b border-gray-700">
+          <nuxt-link
+            to="/admin/login"
+            class="text-[#01111f] block w-full text-center py-3"
+          >
+            Login
+          </nuxt-link>
+        </li>
       </ul>
     </nav>
   </header>

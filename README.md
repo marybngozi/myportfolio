@@ -4,6 +4,8 @@
 
 ## Build Setup
 
+Node Js == v16.20.2
+
 ```bash
 # install dependencies
 $ yarn install

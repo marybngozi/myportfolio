@@ -1,8 +1,12 @@
 <template>
   <div class="page">
-    <div class="flex justify-between items-center max-w-[500px]">
+    <div class="flex justify-between items-center min-w-[500px]">
       <h5 class="text-xl text-lemon mb-1">Welcome Awesome</h5>
-      <nuxt-link to="/" class="font-bold text-white block">Home</nuxt-link>
+      <p>
+        <nuxt-link to="/" class="font-bold text-white block hover:underline">
+          Home
+        </nuxt-link>
+      </p>
     </div>
 
     <form class="card-box" method="POST" @submit.prevent="login()">
@@ -29,7 +33,14 @@
       </div>
 
       <div class="flex justify-center">
-        <button @click="login()" class="">Proceed</button>
+        <button
+          type="submit"
+          class="flex justify-center gap-2"
+          :disabled="proceeding || !formReady"
+        >
+          <span>Proceed</span>
+          <app-spinner v-if="proceeding"></app-spinner>
+        </button>
       </div>
     </form>
   </div>
@@ -39,7 +50,7 @@
 export default {
   name: "Login",
 
-  middleware: "guest",
+  layout: "auth",
 
   data() {
     return {
@@ -51,17 +62,51 @@ export default {
     };
   },
 
+  mounted() {
+    this.$store.dispatch("logout");
+  },
+
+  computed: {
+    formReady() {
+      return Boolean(this.form.username) && Boolean(this.form.password);
+    },
+  },
+
   methods: {
     async login() {
+      if (!this.formReady) {
+        this.$swal({
+          icon: "error",
+          text: "Fill all required fields",
+        });
+        return;
+      }
+
       try {
         this.proceeding = true;
-        // const ressp = await this.$auth.loginWith("local", {
-        //   data: this.form,
-        // });
-        const ressp = await this.$axios.$post("/auth/login", this.form);
-        console.log({ ressp });
-        // this.$auth.setUser(ressp.data.user);
+
+        const res = await this.$axios.$post("/auth/login", this.form, {
+          headers: { noauth: true },
+        });
+
         this.proceeding = false;
+        if (!res) {
+          return;
+        }
+
+        const { user, token } = res;
+
+        this.$store.commit("setUser", user);
+        this.$store.commit("setValue", {
+          key: "token",
+          val: token,
+        });
+        this.$store.commit("setValue", {
+          key: "loggedIn",
+          val: true,
+        });
+
+        this.$router.push({ name: "admin-app" });
       } catch (error) {
         console.log(error);
         this.proceeding = false;

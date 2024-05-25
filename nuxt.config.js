@@ -29,7 +29,7 @@ export default {
   // loading: "~/components/loading.vue",
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ["@sweetalert2/theme-dark", "~/static/css/index.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -45,7 +45,27 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxtjs/auth", "@nuxtjs/axios", "@nuxtjs/pwa"],
+  modules: [
+    "@nuxtjs/axios",
+    "@nuxtjs/pwa",
+    [
+      "vue-sweetalert2/nuxt/no-css",
+      {
+        confirmButtonColor: "#030920d6",
+        // confirmButtonColor: "#6ef4ac",
+        cancelButtonColor: "#ff7674",
+        allowOutsideClick: false,
+        backdrop: "#030920d6",
+        customClass: {
+          popup: "bg-[#001528] bordered-green",
+        },
+      },
+    ],
+  ],
+  plugins: [
+    { src: "~/plugins/axios.js", ssr: false },
+    { src: "~/plugins/vuex-persist", ssr: false },
+  ],
 
   serverMiddleware: {
     "/api": "~/api",
@@ -71,39 +91,8 @@ export default {
     },
   },
 
-  auth: {
-    strategies: {
-      local: {
-        token: {
-          property: "token",
-          global: true,
-          // required: true,
-          type: "Bearer",
-        },
-        user: {
-          autoFetch: false,
-        },
-        endpoints: {
-          login: {
-            url: "/auth/login",
-            method: "POST",
-            propertyName: "token",
-          },
-          // user: {
-          //   url: "/user/me",
-          //   method: "GET",
-          //   propertyName: "user",
-          // },
-          logout: false,
-        },
-      },
-    },
-    redirect: {
-      login: "/admin/login",
-      logout: "/admin/login",
-      callback: false,
-      home: "/admin/app",
-    },
+  publicRuntimeConfig: {
+    APP_DB: process.env.APP_DB,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
