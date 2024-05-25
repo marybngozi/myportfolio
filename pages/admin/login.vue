@@ -1,11 +1,17 @@
 <template>
   <div class="page">
-    <section class="card-box" method="POST">
+    <div class="flex justify-between items-center max-w-[500px]">
+      <h5 class="text-xl text-lemon mb-1">Welcome Awesome</h5>
+      <nuxt-link to="/" class="font-bold text-white block">Home</nuxt-link>
+    </div>
+
+    <form class="card-box" method="POST" @submit.prevent="login()">
       <h3>Login</h3>
+
       <div class="input-div">
         <input
           id="username"
-          type="text"
+          type="email"
           placeholder="enter username"
           v-model="form.username"
         />
@@ -25,7 +31,7 @@
       <div class="flex justify-center">
         <button @click="login()" class="">Proceed</button>
       </div>
-    </section>
+    </form>
   </div>
 </template>
 
@@ -39,7 +45,7 @@ export default {
     return {
       proceeding: false,
       form: {
-        username: "marybngozi",
+        username: "marybngozi@gmail.com",
         password: "12qw!@QW",
       },
     };
@@ -49,9 +55,12 @@ export default {
     async login() {
       try {
         this.proceeding = true;
-        this.$auth.loginWith("local", {
-          data: this.form,
-        });
+        // const ressp = await this.$auth.loginWith("local", {
+        //   data: this.form,
+        // });
+        const ressp = await this.$axios.$post("/auth/login", this.form);
+        console.log({ ressp });
+        // this.$auth.setUser(ressp.data.user);
         this.proceeding = false;
       } catch (error) {
         console.log(error);
@@ -67,7 +76,7 @@ export default {
   background: #001528 !important;
   height: 100vh;
   width: 100%;
-  @apply font-lato flex text-white justify-center items-center;
+  @apply font-lato flex flex-col text-white justify-center items-center;
 }
 .card-box {
   @apply rounded border border-lightLemon shadow w-11/12 px-4 py-5;

@@ -1,13 +1,22 @@
-// const User = require("../models/user");
-// const { BadRequestError } = require("../utils/errors");
+const { User } = require("../models/index.js");
+const {
+  BadRequestError,
+  ServerError,
+  NotFoundError,
+} = require("../utils/errors");
 
 const getUser = async (req, res, next) => {
   try {
-    req.user.password = null;
+    const user = await User.findOne({
+      where: {
+        id: req.userId,
+      },
+      attributes: { exclude: ["password"] },
+    });
 
     return res.status(200).json({
       message: "User fetched Successful!",
-      user: req.user,
+      user,
     });
   } catch (e) {
     console.log("userController-getUser", e);

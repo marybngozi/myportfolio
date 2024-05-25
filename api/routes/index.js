@@ -1,7 +1,7 @@
 const express = require("express");
-const { ErrorHandler } = require("../utils/errors");
+const { ErrorHandler } = require("../utils/errors.js");
 
-const indexController = require("../controllers/index");
+const indexController = require("../controllers/index.js");
 
 // import all routes
 const authRoutes = require("./auth");

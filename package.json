@@ -11,7 +11,10 @@
     "generate": "nuxt generate",
     "lint:prettier": "prettier --check .",
     "lint": "yarn lint:prettier",
-    "lintfix": "prettier --write --list-different ."
+    "lintfix": "prettier --write --list-different .",
+    "migrate:build": "NODE_ENV=production sequelize-mig migration:make -n $1",
+    "migrate:up": "NODE_ENV=production npx sequelize-cli db:migrate",
+    "migrate:down": "NODE_ENV=production npx sequelize-cli db:migrate:undo"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -25,24 +28,33 @@
     "core-js": "^3.19.3",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "helmet": "^7.0.0",
     "joi": "^17.3.0",
     "jsonwebtoken": "^9.0.0",
     "moment": "^2.24.0",
-    "mongoose": "^5.2.4",
+    "moment-timezone": "^0.5.45",
+    "morgan": "^1.10.0",
     "mustache": "^4.1.0",
     "nuxt": "^2.15.8",
+    "pg": "^8.11.3",
+    "pg-hstore": "^2.3.4",
     "randomstring": "^1.2.1",
+    "sequelize": "^6.35.1",
+    "sequelize-cli": "^6.6.2",
     "vue": "^2.6.14",
     "vue-server-renderer": "^2.6.14",
     "vue-slick-carousel": "^1.0.6",
     "vue-template-compiler": "^2.6.14",
-    "webpack": "^4.46.0"
+    "webpack": "^4.46.0",
+    "winston": "^3.9.0",
+    "winston-daily-rotate-file": "^5.0.0"
   },
   "devDependencies": {
     "@nuxtjs/fontawesome": "^1.1.2",
     "@nuxtjs/tailwindcss": "^4.2.1",
     "eslint-config-prettier": "^8.3.0",
     "postcss": "^8.4.4",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "sequelize-mig": "^3.1.3"
   }
 }

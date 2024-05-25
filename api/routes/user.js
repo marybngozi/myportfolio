@@ -1,8 +1,8 @@
 const { Router } = require("express");
 
 const api = Router();
-const userController = require("../controllers/user");
-const { authenticate } = require("../utils/middlewares");
+const userController = require("../controllers/user.js");
+const { authenticate } = require("../middlewares/authenticate.js");
 
 module.exports = () => {
   // ----------User specific routes --------------

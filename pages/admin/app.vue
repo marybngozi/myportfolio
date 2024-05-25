@@ -2,6 +2,11 @@
   <div class="page">
     <div>
       <h2>Hello Dashboard</h2>
+      <h3>{{ $auth.loggedIn }}</h3>
+    </div>
+
+    <div>
+      {{ $auth.user }}
     </div>
     <div>
       <button
@@ -18,7 +23,7 @@
 export default {
   name: "AdminDashboard",
 
-  middleware: "auth",
+  // middleware: "auth",
 };
 </script>
 

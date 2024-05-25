@@ -1,0 +1,370 @@
+{
+    "tables": {
+        "blog_posts": {
+            "tableName": "blog_posts",
+            "schema": {
+                "id": {
+                    "defaultValue": {
+                        "internal": true,
+                        "value": "Sequelize.UUIDV4"
+                    },
+                    "primaryKey": true,
+                    "unique": true,
+                    "allowNull": false,
+                    "field": "id",
+                    "seqType": "Sequelize.UUID"
+                },
+                "title": {
+                    "allowNull": false,
+                    "field": "title",
+                    "seqType": "Sequelize.STRING"
+                },
+                "categories": {
+                    "allowNull": false,
+                    "field": "categories",
+                    "seqType": "Sequelize.ARRAY(Sequelize.STRING)"
+                },
+                "content": {
+                    "allowNull": false,
+                    "field": "content",
+                    "seqType": "Sequelize.TEXT"
+                },
+                "status": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": "draft"
+                    },
+                    "field": "status",
+                    "seqType": "Sequelize.ENUM('draft', 'published', 'deleted')"
+                },
+                "publishedAt": {
+                    "allowNull": true,
+                    "field": "publishedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "deletedAt": {
+                    "field": "deletedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "author": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "users",
+                        "key": "id"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "field": "author",
+                    "seqType": "Sequelize.UUID"
+                },
+                "userId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "users",
+                        "key": "id"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "field": "userId",
+                    "seqType": "Sequelize.UUID"
+                }
+            },
+            "indexes": []
+        },
+        "categories": {
+            "tableName": "categories",
+            "schema": {
+                "id": {
+                    "defaultValue": {
+                        "internal": true,
+                        "value": "Sequelize.UUIDV4"
+                    },
+                    "primaryKey": true,
+                    "unique": true,
+                    "allowNull": false,
+                    "field": "id",
+                    "seqType": "Sequelize.UUID"
+                },
+                "name": {
+                    "allowNull": false,
+                    "field": "name",
+                    "seqType": "Sequelize.STRING"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "deletedAt": {
+                    "field": "deletedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "projects": {
+            "tableName": "projects",
+            "schema": {
+                "id": {
+                    "defaultValue": {
+                        "internal": true,
+                        "value": "Sequelize.UUIDV4"
+                    },
+                    "primaryKey": true,
+                    "unique": true,
+                    "allowNull": false,
+                    "field": "id",
+                    "seqType": "Sequelize.UUID"
+                },
+                "projectName": {
+                    "allowNull": false,
+                    "field": "projectName",
+                    "seqType": "Sequelize.STRING"
+                },
+                "projectDescription": {
+                    "allowNull": false,
+                    "field": "projectDescription",
+                    "seqType": "Sequelize.STRING"
+                },
+                "projectImages": {
+                    "allowNull": false,
+                    "field": "projectImages",
+                    "seqType": "Sequelize.ARRAY(Sequelize.STRING)"
+                },
+                "projectTools": {
+                    "allowNull": false,
+                    "field": "projectTools",
+                    "seqType": "Sequelize.ARRAY(Sequelize.STRING)"
+                },
+                "projectUrl": {
+                    "allowNull": true,
+                    "field": "projectUrl",
+                    "seqType": "Sequelize.STRING"
+                },
+                "projectDuration": {
+                    "allowNull": false,
+                    "field": "projectDuration",
+                    "seqType": "Sequelize.STRING"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "deletedAt": {
+                    "field": "deletedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "skills": {
+            "tableName": "skills",
+            "schema": {
+                "id": {
+                    "defaultValue": {
+                        "internal": true,
+                        "value": "Sequelize.UUIDV4"
+                    },
+                    "primaryKey": true,
+                    "unique": true,
+                    "allowNull": false,
+                    "field": "id",
+                    "seqType": "Sequelize.UUID"
+                },
+                "skillName": {
+                    "allowNull": false,
+                    "field": "skillName",
+                    "seqType": "Sequelize.STRING"
+                },
+                "skillLevel": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": "intermediate"
+                    },
+                    "field": "skillLevel",
+                    "seqType": "Sequelize.ENUM('beginner', 'intermediate', 'advanced', 'expert')"
+                },
+                "skillType": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": "tech"
+                    },
+                    "field": "skillType",
+                    "seqType": "Sequelize.ENUM('tech', 'life')"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "deletedAt": {
+                    "field": "deletedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "users": {
+            "tableName": "users",
+            "schema": {
+                "id": {
+                    "defaultValue": {
+                        "internal": true,
+                        "value": "Sequelize.UUIDV4"
+                    },
+                    "primaryKey": true,
+                    "unique": true,
+                    "allowNull": false,
+                    "field": "id",
+                    "seqType": "Sequelize.UUID"
+                },
+                "firstName": {
+                    "allowNull": false,
+                    "field": "firstName",
+                    "seqType": "Sequelize.STRING"
+                },
+                "middleName": {
+                    "allowNull": true,
+                    "field": "middleName",
+                    "seqType": "Sequelize.STRING"
+                },
+                "lastName": {
+                    "allowNull": false,
+                    "field": "lastName",
+                    "seqType": "Sequelize.STRING"
+                },
+                "email": {
+                    "allowNull": false,
+                    "unique": true,
+                    "field": "email",
+                    "seqType": "Sequelize.STRING"
+                },
+                "phone": {
+                    "allowNull": false,
+                    "unique": true,
+                    "field": "phone",
+                    "seqType": "Sequelize.STRING(15)"
+                },
+                "password": {
+                    "allowNull": true,
+                    "field": "password",
+                    "seqType": "Sequelize.STRING"
+                },
+                "userType": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": "user"
+                    },
+                    "field": "userType",
+                    "seqType": "Sequelize.STRING"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "deletedAt": {
+                    "field": "deletedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "work_experiences": {
+            "tableName": "work_experiences",
+            "schema": {
+                "id": {
+                    "defaultValue": {
+                        "internal": true,
+                        "value": "Sequelize.UUIDV4"
+                    },
+                    "primaryKey": true,
+                    "unique": true,
+                    "allowNull": false,
+                    "field": "id",
+                    "seqType": "Sequelize.UUID"
+                },
+                "role": {
+                    "allowNull": false,
+                    "field": "role",
+                    "seqType": "Sequelize.STRING"
+                },
+                "company": {
+                    "allowNull": false,
+                    "field": "company",
+                    "seqType": "Sequelize.STRING"
+                },
+                "startDate": {
+                    "allowNull": false,
+                    "field": "startDate",
+                    "seqType": "Sequelize.DATE"
+                },
+                "endDate": {
+                    "allowNull": true,
+                    "field": "endDate",
+                    "seqType": "Sequelize.DATE"
+                },
+                "jobDescription": {
+                    "allowNull": false,
+                    "field": "jobDescription",
+                    "seqType": "Sequelize.TEXT"
+                },
+                "skills": {
+                    "allowNull": false,
+                    "field": "skills",
+                    "seqType": "Sequelize.ARRAY(Sequelize.STRING)"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "deletedAt": {
+                    "field": "deletedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "path": "/Users/maryb/Projects/portfolio/api/migrations/_current.json",
+    "backupPath": "/Users/maryb/Projects/portfolio/api/migrations/_current_bak.json",
+    "exists": false,
+    "revision": 1
+}

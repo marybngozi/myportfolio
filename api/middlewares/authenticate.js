@@ -1,6 +1,6 @@
-const { UnAuthorizedAccess } = require("./errors");
-const { verify } = require("./jwt");
-const User = require("../models/user");
+const { UnAuthorizedAccess } = require("../utils/errors");
+const { verify } = require("../utils/jwt");
+const { User } = require("../models/index.js");
 
 const authenticate = async (req, res, next) => {
   try {
@@ -21,13 +21,13 @@ const authenticate = async (req, res, next) => {
       throw new UnAuthorizedAccess("Token not valid", "N403");
     }
 
-    let user = await User.findById(userId);
+    let user = await User.findByPk(userId);
 
     if (!user) {
       throw new UnAuthorizedAccess("Access denied", "N403");
     }
 
-    user.agentId = userId;
+    req.userId = userId;
     req.user = user;
 
     next();

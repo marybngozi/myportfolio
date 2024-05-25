@@ -1,10 +1,11 @@
-const User = require("../models/user");
+const { User } = require("../models/index.js");
 const jwt = require("../utils/jwt");
 const {
   BadRequestError,
   ServerError,
   NotFoundError,
 } = require("../utils/errors");
+const { secureCompare } = require("../utils/helpers.js");
 
 const login = async (req, res, next) => {
   try {
@@ -12,16 +13,18 @@ const login = async (req, res, next) => {
     if (!username || !password)
       throw new NotFoundError("Invalid Login details");
 
-    const user = await User.findOne({ username });
+    const user = await User.findOne({
+      where: {
+        email: username,
+      },
+    });
 
     // if the user was not found
     if (!user) throw new NotFoundError("Invalid Login details");
 
     // Verify Password
-    const passwordCorrect = await user.comparePassword(password);
-
-    if (!passwordCorrect)
-      throw new BadRequestError("Incorrect Email or Password");
+    const passwordCorrect = secureCompare(user.password, password);
+    if (!passwordCorrect) throw new BadRequestError("Incorrect Login Details");
 
     const token = jwt.sign(user.id);
 
@@ -31,6 +34,7 @@ const login = async (req, res, next) => {
     return res.status(200).json({
       message: "Login Successful!",
       token: token.token,
+      user,
     });
   } catch (e) {
     console.log("authController-login", e);

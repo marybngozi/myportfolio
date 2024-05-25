@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 module.exports = {
+  mode: "jit",
   theme: {
     zIndex: {
       9999: 9999,

@@ -1,4 +1,5 @@
 # MaryBlessing Portfolio
+
 - Built with love ❤️
 
 ## Build Setup
@@ -7,8 +8,11 @@
 # install dependencies
 $ yarn install
 
-# serve with hot reload at localhost:3000
+# serve with hot reload at localhost:4004
 $ yarn dev
+
+# start only the server at localhost:4005
+$ yarn api
 
 # build for production and launch server
 $ yarn build
@@ -17,6 +21,22 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
+
+## Database update
+
+### Production
+
+- Use the migration `yarn migrate:up` and `yarn migrate:down` command from the `package.json` file to update the database
+- The production database has been setup to auto update on the `.ebextensions/migration.config` file
+
+### Development
+
+- To update the database migrations files, run
+  `yarn migrate:build <name_of_the migration>`
+
+- After the migration files have been generated, inspect and if satisified, run,
+  `yarn migrate:up`
+  to add the database migration changes to the database
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
