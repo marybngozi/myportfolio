@@ -56,8 +56,8 @@ export default {
     return {
       proceeding: false,
       form: {
-        username: "marybngozi@gmail.com",
-        password: "12qw!@QW",
+        username: null,
+        password: null,
       },
     };
   },
