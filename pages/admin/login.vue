@@ -106,7 +106,7 @@ export default {
           val: true,
         });
 
-        this.$router.push({ name: "admin-app" });
+        this.$router.push({ name: "admin" });
       } catch (error) {
         console.log(error);
         this.proceeding = false;

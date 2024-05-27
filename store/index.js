@@ -2,6 +2,7 @@ export const state = () => ({
   user: {},
   loggedIn: true,
   token: null,
+  navShow: false,
 });
 
 export const getters = {

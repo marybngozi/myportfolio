@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <div>
+    <div class="text-white">
       <h2>Hello Dashboard</h2>
       <h3>{{ $store.state.loggedIn }}</h3>
     </div>
