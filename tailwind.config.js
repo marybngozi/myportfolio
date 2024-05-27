@@ -9,7 +9,7 @@ module.exports = {
       colors: {
         navGray: "#AEABAB",
         navyBlue: "#001528",
-        navyGray: "#acacac",
+        navyGray: "#1e232e",
         lemon: "#6EF4AC",
         lightLemon: "#6C8879",
         darkNavy: "#0F1E2C",
