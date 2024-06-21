@@ -19,12 +19,23 @@
 
     <h6>Full-time Software Egineer / Part-time Tech Mentor</h6>
 
-    <nuxt-link to="/contact" class="btn-outline w-60">
-      <span>Wanna talk?</span>
-      <span class="icon ml-3">
-        <font-awesome-icon :icon="['fas', 'long-arrow-alt-right']" />
-      </span>
-    </nuxt-link>
+    <div class="gap-3 flex flex-col lg:flex-row">
+      <a
+        class="btn-outline min-w-xs lg:w-56"
+        href="https://marybngozi.s3.eu-west-2.amazonaws.com/MaryBlessing_Umeh_CV.pdf"
+        download="MaryBlessing_Umeh-CV"
+        target="_blank"
+      >
+        View Resume (CV)
+      </a>
+
+      <nuxt-link to="/contact" class="btn-outline min-w-xs lg:w-60">
+        <span>Wanna talk?</span>
+        <span class="icon ml-3">
+          <font-awesome-icon :icon="['fas', 'long-arrow-alt-right']" />
+        </span>
+      </nuxt-link>
+    </div>
 
     <div class="arrows">
       <p>

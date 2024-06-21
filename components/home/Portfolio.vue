@@ -5,10 +5,10 @@
 
       <div class="flex flex-col lg:flex-row justify-between">
         <p class="w-12/12 lg:w-8/12 text-justify mb-7 lg:mb-0">
-          Having collaborated in building some amazing projects and personal
-          projects too. Also here are is added some of the Mentorship projects I
-          took part in. I have some of them shown here, and these are the ones I
-          could share with you. Hope you find them amazing.👩🏽‍💻
+          Having collaborated on numerous impactful projects and co-mentored
+          over 500 students in their programming journeys, I am excited to share
+          some of the standout projects that are not restricted by proprietary
+          rights. I hope you find them impressive.👩🏽‍💻
         </p>
 
         <div class="w-12/12 lg:w-3/12 div-btn">

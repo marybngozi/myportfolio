@@ -7,22 +7,33 @@
       <div class="flex flex-col-reverse md:flex-row gap-x-5 justify-between">
         <div class="w-5/5 md:w-3/5 mt-7 md:mt-14">
           <p class="text-justify mb-7 w-full sm:w-10/12 sm:mx-auto md:w-full">
-            Software Engineer actually a full-stack developer with more than 3
-            years of professional experience, a customer-driven nature,
-            well-organized and a collaborative team player with strong
-            communication and analytical abilities. Dedicated to improving
-            skills through hands-on learning and development work. Full-stack
-            Web developer and an educator, I'm passionate about building
-            software solutions.
+            As a Software Engineer, I am a full-stack web developer with over 3
+            years of professional experience. I possess a customer-driven nature
+            and excel as an organized and collaborative team player, leveraging
+            strong communication and analytical abilities to drive project
+            success. While I thrive in team environments, I am equally
+            proficient working independently, demonstrating self-motivation and
+            autonomy in delivering results.
+          </p>
+          <p class="text-justify mb-7 w-full sm:w-10/12 sm:mx-auto md:w-full">
+            I have a proven track record as a competent team leader, adept at
+            guiding and motivating teams towards achieving shared objectives. My
+            expertise lies in web application development, DevOps practices, and
+            cloud technologies, supplemented by intermediate proficiency in
+            database management. I am deeply passionate about crafting
+            innovative software solutions and contributing to the growth and
+            development of individuals and teams alike.
           </p>
 
           <p class="text-justify w-full sm:w-10/12 sm:mx-auto md:w-full">
             I currently work at
-            <a class="cursor" href="https://udacity.com" target="_blanck">
-              Udacity
+            <a class="cursor" href="https://appmart.ng" target="_blank">
+              Appmart Integrated
             </a>
-            as a Student Guide, where I use my technical skills and leadership
-            ability to mentor sutdents through their Nanodegree Program.
+            as a Contract Software Engineer, where I collaborate in the design,
+            building and maintaining applications tailored towards automating
+            government revenue processes, citizen identitfication and school
+            portal management.
           </p>
         </div>
 

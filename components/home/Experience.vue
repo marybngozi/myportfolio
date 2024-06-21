@@ -3,54 +3,9 @@
     <h1>Experiences</h1>
 
     <div class="text-white mb-3">
-      <VueSlickCarousel v-bind="settings">
-        <div class="box">
-          <h4>Front-end Developer</h4>
-          <h5>Appmart Integrated Limited, Abuja</h5>
-          <h6>Feb, 2020 - Mar 2022</h6>
-          <p>
-            Basically a brief information about the coompany or firm you worked
-            for goes here.
-          </p>
-        </div>
-        <div class="box">
-          <h4>Front-end Developer</h4>
-          <h5>Appmart Integrated Limited, Abuja</h5>
-          <h6>Feb, 2020 - Mar 2022</h6>
-          <p>
-            Basically a brief information about the coompany or firm you worked
-            for goes here.
-          </p>
-        </div>
-        <div class="box">
-          <h4>Front-end Developer</h4>
-          <h5>Appmart Integrated Limited, Abuja</h5>
-          <h6>Feb, 2020 - Mar 2022</h6>
-          <p>
-            Basically a brief information about the coompany or firm you worked
-            for goes here.
-          </p>
-        </div>
-        <div class="box">
-          <h4>Front-end Developer</h4>
-          <h5>Appmart Integrated Limited, Abuja</h5>
-          <h6>Feb, 2020 - Mar 2022</h6>
-          <p>
-            Basically a brief information about the coompany or firm you worked
-            for goes here.
-          </p>
-        </div>
-        <div class="box">
-          <h4>Front-end Developer</h4>
-          <h5>Appmart Integrated Limited, Abuja</h5>
-          <h6>Feb, 2020 - Mar 2022</h6>
-          <p>
-            Basically a brief information about the coompany or firm you worked
-            for goes here.
-          </p>
-        </div>
-        <div class="box">
-          <h4>Front-end Developer</h4>
+      <VueSlickCarousel v-bind="settings" class="gap-3">
+        <div class="boxes" v-for="n in 5" :key="n">
+          <h4>Front-end Developer ({{ n }})</h4>
           <h5>Appmart Integrated Limited, Abuja</h5>
           <h6>Feb, 2020 - Mar 2022</h6>
           <p>
@@ -113,7 +68,7 @@ export default {
 </script>
 <style scoped>
 section {
-  z-index: 9;
+  z-index: 1;
 }
 h1 {
   @apply text-4xl sm:text-5xl md:text-7xl font-bold text-lemon;
@@ -121,10 +76,10 @@ h1 {
 p {
   @apply text-white text-sm md:text-base mt-3 tracking-wide;
 }
-.box {
-  @apply bg-darkNavy w-60 p-6;
+.boxes {
+  @apply bg-darkNavy w-60 p-6 ml-6 border-l-8;
 }
-.box p {
+.boxes p {
   @apply text-base text-navGray font-medium;
 }
 </style>
