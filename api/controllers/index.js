@@ -11,11 +11,8 @@ const home = (req, res) => {
         author: "marybngozi",
       },
     });
-  } catch (e) {
-    console.log("indexController-home", e);
-    return res.status(500).json({
-      message: "Internal Server Error",
-    });
+  } catch (error) {
+    next({ errName: "indexController-home", error });
   }
 };
 

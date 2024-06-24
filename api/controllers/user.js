@@ -18,9 +18,8 @@ const getUser = async (req, res, next) => {
       message: "User fetched Successful!",
       user,
     });
-  } catch (e) {
-    console.log("userController-getUser", e);
-    next(e);
+  } catch (error) {
+    next({ errName: "userController-getUser", error });
   }
 };
 

@@ -36,9 +36,8 @@ const login = async (req, res, next) => {
       token: token.token,
       user,
     });
-  } catch (e) {
-    console.log("authController-login", e);
-    next(e);
+  } catch (error) {
+    next({ errName: "authController-login", error });
   }
 };
 
@@ -65,9 +64,8 @@ const addAdmin = async (req, res, next) => {
         user,
       },
     });
-  } catch (e) {
-    console.log("authController-addAdmin", e);
-    next(e);
+  } catch (error) {
+    next({ errName: "authController-addAdmin", error });
   }
 };
 
