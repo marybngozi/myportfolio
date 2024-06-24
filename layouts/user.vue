@@ -15,7 +15,9 @@
     <main class="grow w-full flex flex-col h-full bg-navyGray text-white">
       <admin-dash-head :title="pageTitle" />
 
-      <Nuxt />
+      <div class="p-4 lg:p-6">
+        <Nuxt />
+      </div>
     </main>
   </div>
 </template>
@@ -24,13 +26,16 @@
 export default {
   data() {
     return {
-      pageTitle: "Home",
+      // pageTitle: "Home",
     };
   },
 
   computed: {
     navShow() {
       return this.$store.state.navShow;
+    },
+    pageTitle() {
+      return this.$store.state.pageTitle;
     },
   },
 };

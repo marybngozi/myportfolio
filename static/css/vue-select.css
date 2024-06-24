@@ -1,0 +1,70 @@
+/* *********************** V-select ********************* */
+.v-select {
+  position: relative;
+  /* z-index: 1; */
+}
+.v-select .vs__search {
+  margin-top: 0;
+}
+.v-select .vs__search::placeholder {
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  color: #a7a7a7;
+}
+.v-select .vs__dropdown-toggle {
+  @apply py-[0.54rem] px-[0.5rem];
+  background: #ffffff;
+  border-radius: 0.3125rem;
+  color: #101011;
+  border: 1px solid #c7c7c7;
+  margin-top: 0.313rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-variant: small-caps;
+  line-height: 1rem;
+  font-family: "Mulish";
+  justify-content: space-between;
+}
+.v-select .vs__dropdown-toggle:focus-within {
+  border: 0.5px solid #9cd1b8;
+}
+.v-select .vs__selected-options {
+  max-width: 89%;
+  flex-wrap: nowrap;
+}
+
+.v-select .vs__selected {
+  /* width: 100%; */
+  /* white-space: nowrap; */
+  overflow: hidden;
+  /* text-overflow: ellipsis; */
+  display: block;
+}
+.v-select .vs__dropdown-menu {
+  --vs-dropdown-min-width: 100%;
+  background: #f9f9f9;
+  border: none;
+  color: #757474;
+  font-size: 0.8rem;
+  line-height: 1rem;
+  font-family: "Mulish";
+  text-transform: uppercase;
+  font-variant: small-caps;
+  width: 40px;
+}
+.v-select .vs__dropdown-option {
+  padding: 0.6rem 1rem;
+}
+.v-select .vs__dropdown-option--highlight,
+.v-select .vs__dropdown-option:focus,
+.v-select .vs__dropdown-option:active,
+.v-select .vs__dropdown-option:hover {
+  background: #1a8103;
+}
+
+.v-select .vs__clear,
+.v-select .vs__open-indicator {
+  fill: #999999;
+}

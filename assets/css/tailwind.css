@@ -22,17 +22,17 @@
 }
 textarea {
   background: #1c2833;
-  @apply p-3 w-full text-gray-400 focus:outline-none;
+  @apply p-3 w-full text-gray-200 focus:outline-none;
 }
 textarea::placeholder {
   color: #4a5865;
 }
-input {
+.input-div input {
   background: #1c2833;
-  @apply text-gray-400 focus:outline-none focus:border-gray-500 focus:shadow-sm w-full p-3 h-12;
+  @apply text-gray-200 focus:outline-none focus:border-gray-500 focus:shadow-sm w-full p-3 h-12;
 }
-label {
-  color: #4a5865;
+.input-div label {
+  color: #bec8d1;
   @apply absolute top-0 left-0 px-3 py-3 pb-5 h-full pointer-events-none transform origin-left transition-all duration-100 ease-in-out;
 }
 .input-div {

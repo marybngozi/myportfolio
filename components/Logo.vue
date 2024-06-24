@@ -1,5 +1,5 @@
 <template>
-  <span>
+  <nuxt-link to="/">
     <svg
       :class="lclass"
       viewBox="0 0 196 176"
@@ -39,7 +39,7 @@
         </g>
       </g>
     </svg>
-  </span>
+  </nuxt-link>
 </template>
 
 <script>

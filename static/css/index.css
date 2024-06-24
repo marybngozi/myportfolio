@@ -5,3 +5,16 @@ button:disabled {
   cursor: not-allowed;
   opacity: 0.7;
 }
+.input-group input {
+  background: #1c2833;
+  @apply text-gray-200 text-sm p-3 border border-lemon focus:outline-none w-full;
+}
+.input-group label {
+  @apply py-3 text-white;
+}
+.input-group {
+  @apply mb-5;
+}
+.input-group > input::placeholder {
+  @apply text-gray-400 italic text-xs;
+}

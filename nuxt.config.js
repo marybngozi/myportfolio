@@ -29,10 +29,12 @@ export default {
   // loading: "~/components/loading.vue",
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["@sweetalert2/theme-dark", "~/static/css/index.css"],
-
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  css: [
+    "@sweetalert2/theme-dark",
+    "vue-select/dist/vue-select.css",
+    "~/static/css/index.css",
+    "~/static/css/vue-select.css",
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -62,9 +64,12 @@ export default {
       },
     ],
   ],
+
+  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: "~/plugins/axios.js", ssr: false },
     { src: "~/plugins/vuex-persist", ssr: false },
+    { src: "~/plugins/vue-select.js", ssr: false },
   ],
 
   serverMiddleware: {
@@ -96,5 +101,9 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    build: {
+      vendor: ["vue-select"],
+    },
+  },
 };

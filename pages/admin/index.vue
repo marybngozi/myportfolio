@@ -1,18 +1,10 @@
 <template>
   <div class="page">
     <div class="text-white">
-      <h2>Hello Dashboard</h2>
-      <h3>{{ $store.state.loggedIn }}</h3>
+      <h3>Logged in: {{ $store.state.loggedIn }}</h3>
     </div>
 
-    <div>
-      <button
-        class="bg-navyBlue text-lemon p-4 cursor-pointer"
-        @click="logout()"
-      >
-        Logout
-      </button>
-    </div>
+    <div></div>
   </div>
 </template>
 
@@ -25,6 +17,10 @@ export default {
   layout: "user",
 
   mounted() {
+    this.$store.commit("setValue", {
+      key: "pageTitle",
+      val: "Dashboard",
+    });
     this.getData();
   },
 
@@ -35,11 +31,6 @@ export default {
   },
 
   methods: {
-    logout() {
-      this.$store.dispatch("logout");
-      this.$router.push({ name: "admin-login" });
-    },
-
     async getData() {
       try {
         this.getting = true;

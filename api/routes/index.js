@@ -20,17 +20,16 @@ router.use("/user", userRoutes());
 
 // When route is not found, returns a json
 router.use((req, res, next) => {
-  const message = "Not Found";
   return res.status(404).json({
     error: {
-      message,
+      message: "Requested resource was not Found",
     },
   });
 });
 
 // Handles any error from catch block and return it well
-router.use((error, req, res, next) => {
-  const { errorCode, message } = ErrorHandler(error);
+router.use(({ errName, error }, req, res, next) => {
+  const { errorCode, message } = ErrorHandler(error, errName);
 
   return res.status(errorCode).json({
     message,

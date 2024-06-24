@@ -3,6 +3,7 @@ export const state = () => ({
   loggedIn: true,
   token: null,
   navShow: false,
+  pageTitle: "Home",
 });
 
 export const getters = {

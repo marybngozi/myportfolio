@@ -1,6 +1,14 @@
 <template>
   <div class="">
     <admin-left-nav-menu :links="links"> </admin-left-nav-menu>
+
+    <button
+      class="bg-navyBlue text-lemon p-4 cursor-pointer flex items-center gap-2 border-t border-lemon w-full"
+      @click="logout()"
+    >
+      <font-awesome-icon :icon="['fas', 'sign-out-alt']" class="text-xl" />
+      Logout
+    </button>
   </div>
 </template>
 
@@ -41,10 +49,17 @@ export default {
         {
           label: "Blog",
           icon: "sun",
-          to: "/admin/blog",
+          to: "/admin/blogs",
         },
       ],
     };
+  },
+
+  methods: {
+    logout() {
+      this.$store.dispatch("logout");
+      this.$router.push({ name: "admin-login" });
+    },
   },
 };
 </script>
